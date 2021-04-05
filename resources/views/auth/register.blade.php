@@ -33,7 +33,8 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+         <!-- <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a> -->
+         <a href="{{ url('/home') }}"><b>Vacuna - Covid - 19</b></a>
     </div>
 
     <div class="card">
@@ -93,6 +94,20 @@
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                 </div>
+
+                <div class="input-group mb-3">
+                    <select  name="type" id="type" class="form-control @error('type') is-invalid @enderror" placeholder="Type">
+                    <option value="">Select Type</option>
+                        @foreach($tipos as $tipo)
+                            <option value="{{$tipo->nombre}}">{{$tipo->nombre}}</option>
+                        @endforeach                
+                    </select>
+
+                    @error('type')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
 
                 <div class="row">
                     <div class="col-8">

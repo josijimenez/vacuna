@@ -32,6 +32,9 @@
           integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
           crossorigin="anonymous"/>
 
+    
+    <!-- <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" type="text/css" /> -->
+
     @yield('third_party_stylesheets')
 
     @stack('page_css')
@@ -51,14 +54,21 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                    <!--  <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                         class="user-image img-circle elevation-2" alt="User Image"> -->
+                         <img src="{{asset('/img/user_logo_150x150.png')}}"
                          class="user-image img-circle elevation-2" alt="User Image">
+                         
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
-                        <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                       <!-- <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                             class="img-circle elevation-2"
+                             alt="User Image"> -->
+
+                              <img src="{{asset('/img/user_logo_150x150.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
@@ -137,6 +147,10 @@
         
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js" integrity="sha512-J+763o/bd3r9iW+gFEqTaeyi+uAphmzkE/zU8FxY6iAvD3nQKXa+ZAWkBI9QS9QkYEKddQoiy0I5GDxKf/ORBA==" crossorigin="anonymous"></script>
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+
+
+
 <script>
     $(function () {
         bsCustomFileInput.init();
@@ -150,5 +164,8 @@
 @yield('third_party_scripts')
 
 @stack('page_scripts')
+
+@yield('scripts')
+
 </body>
 </html>
