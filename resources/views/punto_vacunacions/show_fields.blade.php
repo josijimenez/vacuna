@@ -4,6 +4,7 @@
     <p>{{ $puntoVacunacion->nombre }}</p>
 </div>
 
+<<<<<<< HEAD
 <!-- Nombre Field -->
 <div class="col-sm-12">
     {!! Form::label('unicodigo', 'Unicódigo:') !!}
@@ -22,6 +23,8 @@
     <p>{{ $puntoVacunacion->zona }}</p>
 </div>
 
+=======
+>>>>>>> 8.0
 <!-- Created At Field -->
 <div class="col-sm-12">
     {!! Form::label('created_at', 'Created At:') !!}
