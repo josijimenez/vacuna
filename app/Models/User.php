@@ -20,6 +20,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'type',
+        'puesto_vacunacion',
+        'institucion',
+
     ];
 
     /**
@@ -40,4 +44,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function isAdmin() {
+        if($this->type == 'ADMINISTRADOR')
+        return true;
+    }
+
+    public function isRegister() {
+        if($this->type == 'REGISTRADOR')
+        return true;
+    }
+
+    public function isVaccinator() {
+        if($this->type == 'VACUNADOR')
+            return true;
+    }
+
+    public function isAdminOrRegister() {
+        if($this->type == 'ADMINISTRADOR' || $this->type == 'REGISTRADOR')
+        return true;
+    }
+
+    public function isAdminOrVaccinator() {
+        if($this->type == 'ADMINISTRADOR' || $this->type == 'VACUNADOR')
+        return true;
+    }
+
+    public function isAll() {
+        if($this->type == 'ADMINISTRADOR' || $this->type == 'REGISTRADOR' || $this->type == 'VACUNADOR')
+        return true;
+    }
+
 }
