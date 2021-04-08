@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Detalle Punto de Vacunación</h1>
+                    <h1>Biologico Details</h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('puntoVacunacions.index') }}">
+                       href="{{ route('biologicos.index') }}">
                         Back
                     </a>
                 </div>
@@ -22,7 +22,7 @@
 
             <div class="card-body">
                 <div class="row">
-                    @include('punto_vacunacions.show_fields')
+                    @include('biologicos.show_fields')
                 </div>
             </div>
 

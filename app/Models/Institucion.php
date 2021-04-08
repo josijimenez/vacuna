@@ -7,19 +7,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Punto_vacunacion
+ * Class Institucion
  * @package App\Models
- * @version March 4, 2021, 1:39 pm UTC
+ * @version April 6, 2021, 9:28 pm UTC
  *
  * @property string $nombre
+ * @property string $tipo
+ * @property string $categoria
+ * @property string $ubicacion
  */
-class Punto_vacunacion extends Model
+class Institucion extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
-    public $table = 'punto_vacunacions';
+    public $table = 'institucions';
     
 
     protected $dates = ['deleted_at'];
@@ -28,12 +31,9 @@ class Punto_vacunacion extends Model
 
     public $fillable = [
         'nombre',
-        'unicodigo',
-        'establecimiento',
-        'zona',
-        'distrito',
-        'provincia',
-        'canton',
+        'tipo',
+        'categoria',
+        'ubicacion'
     ];
 
     /**
@@ -44,12 +44,9 @@ class Punto_vacunacion extends Model
     protected $casts = [
         'id' => 'integer',
         'nombre' => 'string',
-        'unicodigo' => 'string',
-        'establecimiento' => 'string',
-        'zona' => 'string',
-        'distrito' => 'string',
-        'provincia' => 'string',
-        'canton' => 'string',
+        'tipo' => 'string',
+        'categoria' => 'string',
+        'ubicacion' => 'string'
     ];
 
     /**
@@ -58,7 +55,7 @@ class Punto_vacunacion extends Model
      * @var array
      */
     public static $rules = [
-        
+        'nombre' => 'required'
     ];
 
     

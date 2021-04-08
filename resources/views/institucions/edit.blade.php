@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Editar Punto de Vacunación</h1>
+                    <h1>Edit Institucion</h1>
                 </div>
             </div>
         </div>
@@ -17,17 +17,17 @@
 
         <div class="card">
 
-            {!! Form::model($puntoVacunacion, ['route' => ['puntoVacunacions.update', $puntoVacunacion->id], 'method' => 'patch']) !!}
+            {!! Form::model($institucion, ['route' => ['institucions.update', $institucion->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">
-                    @include('punto_vacunacions.fields')
+                    @include('institucions.fields')
                 </div>
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('puntoVacunacions.index') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('institucions.index') }}" class="btn btn-default">Cancel</a>
             </div>
 
            {!! Form::close() !!}

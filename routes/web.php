@@ -184,3 +184,7 @@ Route::get(
     '/check', 
     [DosisController::class, 'check']
 )->name('check');
+
+Route::resource('institucions', App\Http\Controllers\InstitucionController::class);
+
+Route::resource('biologicos', App\Http\Controllers\BiologicoController::class);
