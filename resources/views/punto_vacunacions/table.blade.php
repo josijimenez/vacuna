@@ -3,6 +3,10 @@
         <thead>
             <tr>
                 <th>Nombre</th>
+                <th>Unicódigo</th>
+                <th>Zona</th>
+                <th>Distrito</th>
+                <th>Cantón</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
@@ -10,6 +14,10 @@
         @foreach($puntoVacunacions as $puntoVacunacion)
             <tr>
                 <td>{{ $puntoVacunacion->nombre }}</td>
+                <td>{{ $puntoVacunacion->unicodigo }}</td>
+                <td>{{ $puntoVacunacion->zona }}</td>
+                <td>{{ $puntoVacunacion->distrito }}</td>
+                <td>{{ $puntoVacunacion->canton }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['puntoVacunacions.destroy', $puntoVacunacion->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

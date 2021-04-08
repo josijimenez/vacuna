@@ -36,6 +36,13 @@
   </li>
 
   <li class="nav-item">
+      <a href="{{ route('puntoVacunacions.index') }}"
+         class="nav-link {{ Request::is('puntoVacunacions*') ? 'active' : '' }}">
+          <p>Puntos Vacunación</p>
+      </a>
+  </li>
+
+  <li class="nav-item">
 
       <a class="nav-link"
          href="/informe">
@@ -82,4 +89,20 @@
 
 
 @endif
+
+<li class="nav-item">
+    <a href="{{ route('institucions.index') }}"
+       class="nav-link {{ Request::is('institucions*') ? 'active' : '' }}">
+        <p>Institucions</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('biologicos.index') }}"
+       class="nav-link {{ Request::is('biologicos*') ? 'active' : '' }}">
+        <p>Biologicos</p>
+    </a>
+</li>
+
 

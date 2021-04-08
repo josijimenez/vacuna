@@ -4,7 +4,6 @@
     <p>{{ $puntoVacunacion->nombre }}</p>
 </div>
 
-<<<<<<< HEAD
 <!-- Nombre Field -->
 <div class="col-sm-12">
     {!! Form::label('unicodigo', 'Unicódigo:') !!}
@@ -28,6 +27,19 @@
     {!! Form::label('distrito', 'Distrito:') !!}
     <p>{{ $puntoVacunacion->distrito }}</p>
 </div>
+
+<!-- Nombre Field -->
+<div class="col-sm-12">
+    {!! Form::label('distrito', 'Provincia:') !!}
+    <p>{{ $puntoVacunacion->provincia }}</p>
+</div>
+
+<!-- Nombre Field -->
+<div class="col-sm-12">
+    {!! Form::label('distrito', 'Cantón:') !!}
+    <p>{{ $puntoVacunacion->canton }}</p>
+</div>
+
 
 
 <!-- Created At Field -->

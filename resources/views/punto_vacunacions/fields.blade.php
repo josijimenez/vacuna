@@ -39,6 +39,6 @@
 
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('canton', 'Canton:') !!}
+    {!! Form::label('canton', 'Cantón:') !!}
     {!! Form::text('canton', null, ['class' => 'form-control']) !!}
 </div>

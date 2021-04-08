@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Create Punto Vacunacion</h1>
+                    <h1>Crear Punto de Vacunación</h1>
                 </div>
             </div>
         </div>
