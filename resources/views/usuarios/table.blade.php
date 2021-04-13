@@ -4,7 +4,6 @@
             <tr>
             <th>Nombre</th>
             <th>Tipo</th>
-            <th>Puesto vacunación</th>
             <th>Institución</th>
             <th colspan="3">Action</th>
             </tr>
@@ -14,8 +13,7 @@
             <tr>
             <td>{{ $user->name }}</td>
             <td>{{ $user->type }}</td>
-            <td>{{ $user->puesto_vacunacion }}</td>
-            <td>{{ $user->institucion }}</td>
+            <td>{{ $user->institucion->nombre }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['usuarios.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

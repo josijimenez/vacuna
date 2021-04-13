@@ -4,12 +4,24 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Puesto Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('identificacion', 'Identificación:') !!}
+    {!! Form::text('identificacion', null, ['class' => 'form-control']) !!}
+</div>
+
 <div class="form-group col-sm-6">
 {!! Form::label('email', 'Email:') !!}
 {!! Form::text('email', old('email'), ['class'=>'form-control', 'placeholder'=>'Enter Email']) !!}
 @error('email')
 <span class="error invalid-feedback">{{ $message }}</span>
 @enderror
+</div>
+
+<!-- Puesto Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('telefono', 'Teléfono:') !!}
+    {!! Form::text('telefono', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-sm-6">
@@ -38,14 +50,8 @@
     {!! Form::select('type', $tipos, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
 </div>
 
-<!-- Puesto Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('puesto_vacunacion', 'Puesto vacunación:') !!}
-    {!! Form::select('puesto_vacunacion', $puestos, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
-</div>
-
  <!-- Institucion Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('institucion', 'Institución:') !!}
-    {!! Form::select('institucion', $instituciones, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
+    {!! Form::label('institucion_id', 'Institución:') !!}
+    {!! Form::select('institucion_id', $institucionItems, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
 </div>

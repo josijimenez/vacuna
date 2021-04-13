@@ -59,4 +59,21 @@ class Institucion extends Model
     ];
 
     
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    **/
+    public function users()
+    {
+        return $this->hasMany('\App\Models\User', 'institucion_id');
+    }
+
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    **/
+    public function puntos()
+    {
+        return $this->hasMany('\App\Models\Punto_vacunacion', 'institucions_id');
+    }
+
 }

@@ -7,5 +7,5 @@
 <!-- Punto Vacunacions Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('punto_vacunacions_id', 'Punto Vacunacions Id:') !!}
-    {!! Form::text('punto_vacunacions_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('punto_vacunacions_id', $puntos, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
 </div>

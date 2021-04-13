@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 
+use App\Models\Catalogo;
+use App\Models\Item;
+
 class InstitucionController extends AppBaseController
 {
     /** @var  InstitucionRepository */
@@ -30,9 +33,16 @@ class InstitucionController extends AppBaseController
     public function index(Request $request)
     {
         $institucions = $this->institucionRepository->all();
+        
+        $tipo = Catalogo::where('nombre', 'INSTITUCION_TIPO')->first();;
+        $tipos = Item::where('catalogos_id', $tipo->id)->pluck('nombre', 'nombre');
 
+        $categoria = Catalogo::where('nombre', 'INSTITUCION_CATEGORIA')->first();;
+        $categorias = Item::where('catalogos_id', $categoria->id)->pluck('nombre', 'nombre');
+        
         return view('institucions.index')
-            ->with('institucions', $institucions);
+            ->with('institucions', $institucions)
+            ->with('tipos', $tipos)->with('categorias', $categorias);
     }
 
     /**
@@ -41,8 +51,14 @@ class InstitucionController extends AppBaseController
      * @return Response
      */
     public function create()
-    {
-        return view('institucions.create');
+    {   
+        $tipo = Catalogo::where('nombre', 'INSTITUCION_TIPO')->first();;
+        $tipos = Item::where('catalogos_id', $tipo->id)->pluck('nombre', 'nombre');
+
+        $categoria = Catalogo::where('nombre', 'INSTITUCION_CATEGORIA')->first();;
+        $categorias = Item::where('catalogos_id', $categoria->id)->pluck('nombre', 'nombre');
+        return view('institucions.create')
+            ->with('tipos', $tipos)->with('categorias', $categorias);
     }
 
     /**

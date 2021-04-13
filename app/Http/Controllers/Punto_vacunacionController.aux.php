@@ -10,9 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\Institucion;
-use App\Models\Punto_vacunacion;
 
 class Punto_vacunacionController extends AppBaseController
 {
@@ -33,9 +31,7 @@ class Punto_vacunacionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        //$puntoVacunacions = $this->puntoVacunacionRepository->all();
-
-        $puntoVacunacions = Punto_vacunacion::byUser(Auth::user())->get();
+        $puntoVacunacions = $this->puntoVacunacionRepository->all();
 
         return view('punto_vacunacions.index')
             ->with('puntoVacunacions', $puntoVacunacions);
