@@ -18,11 +18,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'identificacion',
         'email',
+        'telefono',
         'password',
         'type',
-        'puesto_vacunacion',
-        'institucion',
+        'institucion_id',
 
     ];
 
@@ -43,6 +44,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'institucion_id' => 'integer',
     ];
 
 
@@ -75,5 +77,15 @@ class User extends Authenticatable
         if($this->type == 'ADMINISTRADOR' || $this->type == 'REGISTRADOR' || $this->type == 'VACUNADOR')
         return true;
     }
+
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    **/
+    public function institucion()
+    {
+        return $this->belongsTo('\App\Models\Institucion', 'institucion_id');
+    }
+    
 
 }

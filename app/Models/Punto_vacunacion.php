@@ -34,6 +34,7 @@ class Punto_vacunacion extends Model
         'distrito',
         'provincia',
         'canton',
+        'institucions_id',
     ];
 
     /**
@@ -50,6 +51,7 @@ class Punto_vacunacion extends Model
         'distrito' => 'string',
         'provincia' => 'string',
         'canton' => 'string',
+        'institucions_id' => 'integer',
     ];
 
     /**
@@ -62,4 +64,35 @@ class Punto_vacunacion extends Model
     ];
 
     
+     public function scopeByUser($query, User $user)
+    {
+        // If the user is not an admin, show articles by their department.
+        // Chaining another where(column, condition) results in an AND in
+        // the WHERE clause
+        if (!$user->isAdmin()) {
+            // WHERE department = X AND another_column = another_value
+            return $query->where('institucions_id', $user->institucion_id);
+        }
+
+        // If the user is an admin, don't add any extra where clauses, so everything is returned.
+        return $query;
+    }
+
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    **/
+    public function institucion()
+    {
+        return $this->belongsTo('\App\Models\Institucion', 'institucions_id');
+    }
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    **/
+    public function brigadas()
+    {
+        return $this->hasMany('\App\Models\Brigada', 'punto_vacunacions_id');
+    }
+
 }

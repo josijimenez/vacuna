@@ -7,13 +7,13 @@
 <!-- Tipo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tipo', 'Tipo:') !!}
-    {!! Form::text('tipo', null, ['class' => 'form-control']) !!}
+    {!! Form::select('tipo', $tipos, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
 </div>
 
 <!-- Categoria Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('categoria', 'Categoria:') !!}
-    {!! Form::text('categoria', null, ['class' => 'form-control']) !!}
+    {!! Form::select('categoria', $categorias, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
 </div>
 
 <!-- Ubicacion Field -->

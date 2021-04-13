@@ -6,6 +6,7 @@
                 <th>Unicódigo</th>
                 <th>Zona</th>
                 <th>Distrito</th>
+                <th>Provincia</th>
                 <th>Cantón</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -17,6 +18,7 @@
                 <td>{{ $puntoVacunacion->unicodigo }}</td>
                 <td>{{ $puntoVacunacion->zona }}</td>
                 <td>{{ $puntoVacunacion->distrito }}</td>
+                <td>{{ $puntoVacunacion->provincia }}</td>
                 <td>{{ $puntoVacunacion->canton }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['puntoVacunacions.destroy', $puntoVacunacion->id], 'method' => 'delete']) !!}

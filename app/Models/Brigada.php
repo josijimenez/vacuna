@@ -52,5 +52,14 @@ class Brigada extends Model
         
     ];
 
-    
+
+    /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    **/
+    public function punto_vacunacion()
+    {
+        return $this->belongsTo('\App\Models\Punto_vacunacion', 'punto_vacunacions_id');
+    }
+
+
 }

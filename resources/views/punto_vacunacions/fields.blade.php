@@ -1,3 +1,9 @@
+ <!-- Tipo Institucion Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('institucions_id', 'Institución:') !!}
+        {!! Form::select('institucions_id', $instituciones, null, ['class' => 'form-control', 'placeholder' => '--------------------']) !!}
+    </div>
+
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nombre', 'Nombre:') !!}

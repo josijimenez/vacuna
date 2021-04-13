@@ -110,7 +110,8 @@ class UsuarioController extends AppBaseController
         $input = $request->all();
 
         $rules =  [
-            'name'                  => 'required|string|max:255|unique:users|alpha_dash',
+           // 'name'                  => 'required|string|max:255|unique:users|alpha_dash',
+            'name'                  => 'required|string|max:255|unique:users',
             'email'                 => 'required|email|max:255|unique:users',
             'password'              => 'required|string|confirmed|min:6',
             'password_confirmation' => 'required|string|same:password',
@@ -145,11 +146,12 @@ class UsuarioController extends AppBaseController
 
         User::create([
             'name' => $input['name'],
+            'identificacion' => $input['identificacion'],
             'email' => $input['email'],
+            'telefono' => $input['telefono'],
             'password' => Hash::make($input['password']),
             'type' => $input['type'],
-            'puesto_vacunacion' => $input['puesto_vacunacion'],
-            'institucion' => $input['institucion'],
+            'institucion_id' => $input['institucion_id'],
         ]);
 
         Flash::success('Persona saved successfully.');
@@ -276,10 +278,11 @@ class UsuarioController extends AppBaseController
         }
 
         $usuario->name = strip_tags($request->input('name'));
+        $usuario->identificacion = strip_tags($request->input('identificacion'));
         $usuario->email = $request->input('email');
+        $usuario->telefono = strip_tags($request->input('telefono'));
         $usuario->type = $request->input('type');
-        $usuario->puesto_vacunacion = $request->input('puesto_vacunacion');
-        $usuario->institucion = $request->input('institucion');
+        $usuario->institucion_id = $request->input('institucion_id');
 
         //if ($emailCheck) {
         //    $usuario->email = $request->input('email');

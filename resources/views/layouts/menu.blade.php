@@ -106,3 +106,18 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('integrantes.index') }}"
+       class="nav-link {{ Request::is('integrantes*') ? 'active' : '' }}">
+        <p>Integrantes</p>
+    </a>
+</li>
+
+
+
+<li class="nav-item">
+    <a href="{{ route('brigadas.index') }}"
+       class="nav-link {{ Request::is('brigadas*') ? 'active' : '' }}">
+        <p>Brigadas</p>
+    </a>
+</li>
