@@ -98,12 +98,7 @@
 </li>
 
 
-<li class="nav-item">
-    <a href="{{ route('biologicos.index') }}"
-       class="nav-link {{ Request::is('biologicos*') ? 'active' : '' }}">
-        <p>Biologicos</p>
-    </a>
-</li>
+
 
 
 <li class="nav-item">
@@ -133,7 +128,12 @@
             <ul class="nav nav-treeview">
 
 
-           
+            <li class="nav-item">
+                <a href="{{ route('biologicos.index') }}"
+                class="nav-link {{ Request::is('biologicos*') ? 'active' : '' }}">
+                    <p>Biologicos</p>
+                </a>
+            </li>
 
 
             <li class="nav-item">
