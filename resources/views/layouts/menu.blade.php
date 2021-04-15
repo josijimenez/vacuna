@@ -123,14 +123,41 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('brigadas.index') }}"
-       class="nav-link {{ Request::is('brigadas*') ? 'active' : '' }}">
-        <p>Brigadas</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="{{ route('brigadas.index') }}"
-       class="nav-link {{ Request::is('brigadas*') ? 'active' : '' }}">
-        <p>Brigadas</p>
-    </a>
+            <a href="#" class="nav-link">
+            
+              <p>
+                Bodega
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+
+           
+
+
+            <li class="nav-item">
+                <a href="{{ route('ingresoDetalles.index') }}"
+                class="nav-link {{ Request::is('ingresoDetalles*') ? 'active' : '' }}">
+                    <p>Ingreso Detalles</p>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="{{ route('ingresoProductos.index') }}"
+                class="nav-link {{ Request::is('ingresoProductos*') ? 'active' : '' }}">
+                    <p>Ingreso Productos</p>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="{{ route('stockDisponibles.index') }}"
+                class="nav-link {{ Request::is('stockDisponibles*') ? 'active' : '' }}">
+                    <p>Stock Disponibles</p>
+                </a>
+            </li>
+
+            </ul>
 </li>
