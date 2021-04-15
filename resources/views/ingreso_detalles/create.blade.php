@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Crear Biologico</h1>
+                    <h1>Crear Ingreso Detalle</h1>
                 </div>
             </div>
         </div>
@@ -17,19 +17,19 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'biologicos.store']) !!}
+            {!! Form::open(['route' => 'ingresoDetalles.store']) !!}
 
             <div class="card-body">
 
                 <div class="row">
-                    @include('biologicos.fields')
+                    @include('ingreso_detalles.fields')
                 </div>
 
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('biologicos.index') }}" class="btn btn-default">Cancelar</a>
+                <a href="{{ route('ingresoDetalles.index') }}" class="btn btn-default">Cancelar</a>
             </div>
 
             {!! Form::close() !!}

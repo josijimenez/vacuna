@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class BiologicoController extends AppBaseController
 {
     /** @var  BiologicoRepository */
@@ -73,14 +73,16 @@ class BiologicoController extends AppBaseController
     public function show($id)
     {
         $biologico = $this->biologicoRepository->find($id);
-
+        
         if (empty($biologico)) {
             Flash::error('Biologico not found');
 
             return redirect(route('biologicos.index'));
         }
-
-        return view('biologicos.show')->with('biologico', $biologico);
+        $ingreso = DB::select('select * from ingreso_productos where lote = ?',[$biologico->lote]);
+        $egreso = DB::select('select * from egreso_productos where lote = ?',[$biologico->lote]);
+        return view('biologicos.show')->with('biologico', $biologico)
+                                        ->with('ingresos', $ingreso)->with('egresos', $egreso);
     }
 
     /**

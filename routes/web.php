@@ -187,7 +187,7 @@ Route::get(
 
 Route::resource('institucions', App\Http\Controllers\InstitucionController::class);
 
-Route::resource('biologicos', App\Http\Controllers\BiologicoController::class);
+
 
 Route::resource('integrantes', App\Http\Controllers\IntegranteController::class);
 
@@ -196,3 +196,11 @@ Route::get(
     'integrantes/brigada/{id}',
     [App\Http\Controllers\IntegranteController::class, 'integrantes_brigada']
 )->name('integrantes_brigada');
+
+Route::resource('biologicos', App\Http\Controllers\BiologicoController::class);
+
+Route::resource('ingresoDetalles', App\Http\Controllers\IngresoDetalleController::class);
+
+Route::resource('ingresoProductos', App\Http\Controllers\IngresoProductoController::class);
+
+Route::resource('stockDisponibles', App\Http\Controllers\StockDisponibleController::class);

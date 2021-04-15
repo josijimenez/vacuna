@@ -5,13 +5,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Biologicos</h1>
+                    <h1>Stock Disponibles y Transferencia</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('biologicos.create') }}">
-                        Añadir Nuevo
-                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -25,7 +22,7 @@
 
         <div class="card">
             <div class="card-body p-0">
-                @include('biologicos.table')
+                @include('stock_disponibles.table')
 
                 <div class="card-footer clearfix float-right">
                     <div class="float-right">

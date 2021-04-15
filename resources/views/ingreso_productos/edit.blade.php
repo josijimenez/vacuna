@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Crear Biologico</h1>
+                    <h1>Editar Ingreso Producto</h1>
                 </div>
             </div>
         </div>
@@ -17,22 +17,20 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'biologicos.store']) !!}
+            {!! Form::model($ingresoProducto, ['route' => ['ingresoProductos.update', $ingresoProducto->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
-
                 <div class="row">
-                    @include('biologicos.fields')
+                    @include('ingreso_productos.fields')
                 </div>
-
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('biologicos.index') }}" class="btn btn-default">Cancelar</a>
+                <a href="{{ route('ingresoProductos.index') }}" class="btn btn-default">Cancelar</a>
             </div>
 
-            {!! Form::close() !!}
+           {!! Form::close() !!}
 
         </div>
     </div>

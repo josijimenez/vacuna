@@ -1,7 +1,7 @@
 <!-- Lote Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('lote', 'Lote:') !!}
-    {!! Form::text('lote', null, ['class' => 'form-control']) !!}
+    {!! Form::text('lote', null, ['class' => 'form-control','readonly' => 'true']) !!}
 </div>
 
 <!-- Marca Field -->
@@ -13,7 +13,7 @@
 <!-- Fecha Caducidad Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_caducidad', 'Fecha Caducidad:') !!}
-    {!! Form::text('fecha_caducidad', null, ['class' => 'form-control','id'=>'fecha_caducidad']) !!}
+    {!! Form::text('fecha_caducidad', null, ['class' => 'form-control','id'=>'fecha_caducidad','readonly' => 'true']) !!}
 </div>
 
 @push('page_scripts')
