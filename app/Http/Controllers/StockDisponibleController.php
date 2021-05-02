@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-use App\Models\Institucion;
+use App\Models\Punto_vacunacion;
 use App\Models\StockDisponible;
 use App\Models\EgresoProducto;
 use DB;
@@ -97,7 +97,7 @@ class StockDisponibleController extends AppBaseController
     public function edit($id)
     {
         $stockDisponible = $this->stockDisponibleRepository->find($id);
-        $instituciones = Institucion::all()->pluck('nombre','nombre');
+        $instituciones = Punto_vacunacion::all()->pluck('nombre','nombre');
         if (empty($stockDisponible)) {
             Flash::error('Stock Disponible not found');
 
@@ -138,6 +138,7 @@ class StockDisponibleController extends AppBaseController
                 $stock = new StockDisponible;
                 $stock->lote = $lote;
                 $stock->cantidad_actual = $cantidad_enviar;
+                
                 $stock->institucion =  $institucion_enviar;
                 $stock->save();
                 //Tabla Egreso
@@ -145,7 +146,8 @@ class StockDisponibleController extends AppBaseController
                 $egreso = new EgresoProducto;
                 $egreso->cantidad = $cantidad_enviar;
                 $egreso->lote = $lote;
-                $egreso->institucion = $institucion_enviar;
+                $egreso->bodega_entrega = $institucion_origen;
+                $egreso->bodega_recibe = $institucion_enviar;
                 $egreso->usuario = $user->name;
                 $egreso->save();
 
@@ -162,7 +164,8 @@ class StockDisponibleController extends AppBaseController
                 $egreso = new EgresoProducto;
                 $egreso->cantidad = $cantidad_enviar;
                 $egreso->lote = $lote;
-                $egreso->institucion = $institucion_enviar;
+                $egreso->bodega_entrega = $institucion_origen;
+                $egreso->bodega_recibe = $institucion_enviar;
                 $egreso->usuario = $user->name;
                 $egreso->save();
                 $cantidad_actual_stock = intval($stockDisponible[0]->cantidad_actual)+intval($cantidad_enviar);
