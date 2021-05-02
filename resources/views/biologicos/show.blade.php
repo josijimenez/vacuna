@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-sm-6">
-                    <h1>Ingresos a Bodega</h1>
+                    <h1>Ingresos a Bodega Zonal</h1>
                 </div>
     <div class="table-responsive">
     <table class="table" id="biologicos-table">
@@ -59,8 +59,8 @@
         @endforeach
         </tbody>
     </table>
-    <div class="col-sm-6">
-                    <h1>Egresos de Bodega</h1>
+    <div class="col-sm-9">
+                    <h1>Transferencias a Punto de Vacunacion</h1>
                 </div>
     <div class="table-responsive">
     <table class="table" id="biologicos-table">
@@ -68,7 +68,8 @@
             <tr>
                 <th>Lote</th>
         <th>Cantidad Dosis Egreso</th>
-        <th>Bodega a la que Egresa</th>
+        <th>Bodega Origen</th>
+        <th>Bodega Destino</th>
         <th>Fecha de Egreso</th>
         
                
@@ -79,7 +80,8 @@
             <tr>
                 <td>{{ $egreso->lote }}</td>
             <td>{{ $egreso->cantidad }}</td>
-            <td>{{ $egreso->institucion }}</td>
+            <td>{{ $egreso->bodega_entrega }}</td>
+            <td>{{ $egreso->bodega_recibe }}</td>
             <td>{{ $egreso->created_at }}</td>
             
                
