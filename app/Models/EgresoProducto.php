@@ -32,7 +32,8 @@ class EgresoProducto extends Model
         'cantidad',
         'lote',
         'usuario',
-        'institucion'
+        'bodega_entrega',
+        'bodega_recibe'
     ];
 
     /**
@@ -45,7 +46,8 @@ class EgresoProducto extends Model
         'cantidad' => 'integer',
         'lote' => 'string',
         'usuario' => 'string',
-        'institucion' => 'string'
+        'bodega_entrega' => 'string',
+        'bodega_recibe' => 'string'
     ];
 
     /**
@@ -56,7 +58,7 @@ class EgresoProducto extends Model
     public static $rules = [
         'lote' => 'required',
         
-        'institucion' => 'required'
+        'bodega_recibe' => 'required'
     ];
 
     
